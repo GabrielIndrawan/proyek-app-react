@@ -1,18 +1,10 @@
-function App() { 
+
+import SignUp from "./pages/signUp";
+
+const App = () => {
   return (
-	  <>
-	    <h1 className="text-3xl font-bold">
-	      Hello world!
-	    </h1>
-      <h1 className="text-3xl font-poppins text-primary">
-	      Hello world!
-	    </h1>
-      <h1 className="text-3xl text-special-green">
-	      Hello world!
-	    </h1>
-	  </>
-  )
-}
+    <SignUp/>
+  );
+};
 
-export default App
-
+export default App;
