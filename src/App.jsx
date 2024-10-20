@@ -1,9 +1,9 @@
 
-import SignUp from "./pages/signUp";
+import ForgetPassword from "./pages/forgetPassword";
 
 const App = () => {
   return (
-    <SignUp/>
+    <ForgetPassword/>
   );
 };
 

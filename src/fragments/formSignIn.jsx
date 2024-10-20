@@ -18,7 +18,7 @@ const FormSignIn = () =>
             </div>
             <Button>Login</Button>
           </form>
-        </div>
+    </div>
     );
   };
 

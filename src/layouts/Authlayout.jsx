@@ -1,18 +1,34 @@
 /* eslint-disable react/prop-types */
-
 import Logo from "../components/logo"
+import Title from "../components/title";
 
 const Authlayout = (props) => {
     const {children, type} = props;
-  return (
+    return (
     <div className="flex justify-center min-h-screen items-center bg-special-mainBg">
       {/* container start */}
       <div className="w-full max-w-sm">
         {/* logo start */}
         <Logo/>
         {/* logo end */}
+        {
+          type==="sign up"?
+            (
+              <div>
+                <Title>
+                  Create an account
+                </Title>
+              </div>
+            )  
+          :
+            (
+              <div/>
+            )
+        }
         {/* form start */}
-        <div className="mt-16">{children}</div>
+        <div className="mt-16">
+          {children}
+        </div>
         {/* form end */}
         {/* teks start */}
         <div className="my-9 px-7 flex justify-center text-xs text-gray-03 items-center flex-col static">
