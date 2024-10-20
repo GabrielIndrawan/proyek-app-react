@@ -111,7 +111,10 @@ const Authlayout = (props) => {
       <a className="text-primary text-sm font-bold">Sign In Here</a>
     </>
   ) : (
-    <a className="text-primary text-sm font-bold">Create an account</a>
+    <div className="flex flex-col utems-center text-center">
+      <a className="text-primary text-sm font-bold">Create an account</a>
+      <a className="text-gray-500 text-sm font-bold">Forgot password</a>
+    </div>
   )}
 </div>
         {/* link end */}

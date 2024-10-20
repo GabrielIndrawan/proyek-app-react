@@ -1,9 +1,10 @@
 
 import ForgetPassword from "./pages/forgetPassword";
+import SignIn from "./pages/signIn";
 
 const App = () => {
   return (
-    <ForgetPassword/>
+    <SignIn/>
   );
 };
 
