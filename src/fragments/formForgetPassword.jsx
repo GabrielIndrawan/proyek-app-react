@@ -1,5 +1,5 @@
 import Button from "../components/button";
-import LabeledInput from "../components/labeledinput";
+import LabeledInput from "../components/labeledInput";
 
 
 const FormForgetPassword = () => {
