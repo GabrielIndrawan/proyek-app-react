@@ -1,4 +1,4 @@
-import FormSignUp from "../Fragments/FormSignUp";
+import FormSignUp from "../Fragments/formSignUp";
 import Authlayout from "../Layouts/Authlayout";
 
 const SignUp = () => {
