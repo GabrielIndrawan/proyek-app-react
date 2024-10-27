@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "../components/button"
 import Checkbox from "../components/checkbox"
 import LabeledInput from "../components/labeledinput"
@@ -16,7 +17,9 @@ const FormSignIn = () =>
             <div className="mb-3">
               <Checkbox label="Keep me signed In"/>
             </div>
-            <Button>Login</Button>
+            <Link to="/">
+              <Button>Login</Button>
+            </Link>
           </form>
     </div>
     );
