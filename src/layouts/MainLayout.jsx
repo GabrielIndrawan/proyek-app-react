@@ -1,5 +1,5 @@
 import Header from "../fragments/header";
-import NavBar from "../fragments/navbar";
+import NavBar from "../fragments/navBar";
 
 const MainLayout = (props) => {
     const {children} = props
