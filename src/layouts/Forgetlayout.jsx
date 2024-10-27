@@ -26,4 +26,4 @@ const ForgetLayout = (props) => {
     )
 }
 
-export default ForgetLayout
+export default ForgetLayout;

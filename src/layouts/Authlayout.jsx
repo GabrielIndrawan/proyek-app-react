@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import {Link} from "react-router-dom"
 import Logo from "../components/logo"
 import Title from "../components/title";
 
@@ -108,12 +109,12 @@ const Authlayout = (props) => {
       <span className="text-sm text-gray-03">
         Already have an account?&nbsp;
       </span>
-      <a className="text-primary text-sm font-bold">Sign In Here</a>
+      <Link to="/login" className="text-primary text-sm font-bold mb-5">Sign In Here</Link>
     </>
   ) : (
     <div className="flex flex-col utems-center text-center">
-      <a className="text-primary text-sm font-bold">Create an account</a>
-      <a className="text-gray-500 text-sm font-bold">Forgot password</a>
+      <Link to="/register" className="text-primary text-sm font-bold">Create an account</Link>
+      <Link className="text-gray-500 text-sm font-bold">Forgot password</Link>
     </div>
   )}
 </div>
