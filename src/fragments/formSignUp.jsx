@@ -1,4 +1,4 @@
-import Button from "../components/Button";
+import Button from "../components/button";
 import LabeledInput from "../components/labeledInput";
 
 const FormSignUp = () => {
