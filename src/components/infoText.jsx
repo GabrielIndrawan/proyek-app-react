@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 const InfoText = (props) => {
     const {children} = props
     return (

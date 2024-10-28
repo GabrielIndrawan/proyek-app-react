@@ -1,6 +1,8 @@
-const Logo = () => {
+/* eslint-disable react/prop-types */
+const Logo = (props) => {
+    const {variant = "text-primary text-4xl"} = props;
     return (
-      <div className="flex justify-center my-5 font-poppins tracking-wide text-primary text-4xl">
+      <div className={`flex justify-center my-5 font-poppins tracking-wide ${variant}`}>
         <span className="font-bold ">FINE</span>bank
         <span className="font-bold">.IO</span>
       </div>

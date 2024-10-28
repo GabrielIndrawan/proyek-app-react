@@ -114,7 +114,7 @@ const Authlayout = (props) => {
   ) : (
     <div className="flex flex-col utems-center text-center">
       <Link to="/register" className="text-primary text-sm font-bold">Create an account</Link>
-      <Link className="text-gray-500 text-sm font-bold">Forgot password</Link>
+      <Link to="/forgot-password" className="text-gray-500 text-sm font-bold">Forgot password</Link>
     </div>
   )}
 </div>

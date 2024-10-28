@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "../components/button";
 import LabeledInput from "../components/labeledinput";
 
@@ -13,9 +14,11 @@ const FormForgetPassword = () => {
           Password Reset
         </div>
       </Button>
-      <div className="block text-gray-500 text-lg font-bold text-center mt-3 mb-2">
-        Back to login
-      </div>
+      <Link to="/login">
+        <div className="block text-gray-500 text-lg font-bold text-center mt-3 mb-2">
+          Back to login
+        </div>
+      </Link>
     </form>
   );
 };
