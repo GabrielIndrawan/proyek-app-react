@@ -36,12 +36,14 @@ const NavBar = () => {
                  </div>
                  <div className="text-special-bg2 ms-3 hidden sm:block">Bills</div>
                </div>
-               <div className="flex hover:bg-special-bg3 px-4 py-3 rounded-md">
-                 <div className="sm:mx-0 mx-auto">
-                    <Icons.Expenses/>
-                 </div>
-                 <div className="text-special-bg2 ms-3 hidden sm:block">Expenses</div>
-               </div>
+               <Link to="/expenses">
+                <div className="flex hover:bg-special-bg3 px-4 py-3 rounded-md">
+                  <div className="sm:mx-0 mx-auto">
+                     <Icons.Expenses/>
+                  </div>
+                  <div className="text-special-bg2 ms-3 hidden sm:block">Expenses</div>
+                </div>
+               </Link>
                <div className="flex hover:bg-special-bg3 px-4 py-3 rounded-md">
                  <div className="sm:mx-0 mx-auto">
                     <Icons.Goal/>

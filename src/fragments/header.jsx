@@ -6,7 +6,7 @@ const Header = () => {
     return(
         <header className="border-b-2 p-6 flex items-center justify-between">
             <div className="flex">
-              <div className="font-bold text-lg">Gabriel Indrawan</div>
+              <div className="font-bold text-lg">Hello Tanzir</div>
               <div className="ms-6 text-gray-03">{date}</div>
             </div>
             <div className="flex">

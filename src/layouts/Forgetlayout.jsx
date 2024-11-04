@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import InfoText from "../components/infoText"
 import Logo from "../components/logo"
 import Title from "../components/title"

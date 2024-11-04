@@ -5,6 +5,7 @@ import SignIn from "./pages/signIn";
 import SignUp from "./pages/signUp";
 import DashboardPage from "./pages/dashboard";
 import BalancePage from "./pages/balance";
+import ExpensesPage from "./pages/expenses";
 
 const App = () => {
   const routers = createBrowserRouter([
@@ -27,6 +28,10 @@ const App = () => {
     {
       path:"/balance",
       element: <BalancePage/>
+    },
+    {
+      path:"/expenses",
+      element: <ExpensesPage/>
     }
   ])
 

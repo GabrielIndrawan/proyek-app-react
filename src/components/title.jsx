@@ -3,7 +3,7 @@ const Title = (props) => {
     const { htmlFor, children } = props;
   
     return (
-        <div class="flex items-center justify-center h-16">
+        <div className="flex items-center justify-center h-16">
             <label
               htmlFor={htmlFor}
               className="block text-slate-800 text-2xl font-bold pb-0"

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import Header from "../fragments/header";
 import NavBar from "../fragments/navBar";
 
