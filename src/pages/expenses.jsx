@@ -16,32 +16,32 @@ const ExpensesPage = () => {
             </div>
             <div className="grid grid-cols-3 space-x-4">
                 <div className="flex flex-col space-y-5">
-                    <div className="w-auto">
+                    <div className="w-auto h-[160px]">
                         <Card untitled height="[160px]">
                             Lorem Ipsum Lorem Ipsum
                         </Card>
                     </div>
-                    <div className="w-auto h-full">
+                    <div className="w-auto h-[160px]">
                         <Card untitled height="[160px]">
                         </Card>
                     </div>
                 </div>
                 <div className="flex flex-col space-y-5">
-                    <div className="w-auto">
+                    <div className="w-auto h-[160px]">
                         <Card untitled height="[160px]">
                         </Card>
                     </div>
-                    <div className="w-auto h-full">
+                    <div className="w-auto h-[160px]">
                         <Card untitled height="[160px]">
                         </Card>
                     </div>
                 </div>
                 <div className="flex flex-col space-y-5">
-                    <div className="w-auto h-full">
+                    <div className="w-auto h-[160px]">
                         <Card untitled height="[160px]">
                         </Card>
                     </div>
-                    <div className="w-auto h-full">
+                    <div className="w-auto h-[160px]">
                         <Card untitled height="[160px]">
                         </Card>
                     </div>
