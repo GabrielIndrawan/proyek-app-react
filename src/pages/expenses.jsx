@@ -7,7 +7,7 @@ const ExpensesPage = () => {
             <div className="flex flex-row mb-5">
                 <div className="text-xl text-gray-500">Expenses Comparison</div>
             </div>
-            <div className="w-full mb-5 h-[210px]">
+            <div className="w-full mb-5 ">
                 <Card untitled height="[210px]">
                 </Card>
             </div>
