@@ -8,7 +8,7 @@ const ExpensesPage = () => {
                 <div className="text-xl text-gray-500">Expenses Comparison</div>
             </div>
             <div className="w-full mb-5 ">
-                <Card untitled height="[210px]">
+                <Card untitled height="[200px]">
                 </Card>
             </div>
             <div className="flex flex-row mb-3">
@@ -17,32 +17,32 @@ const ExpensesPage = () => {
             <div className="grid grid-cols-3 space-x-4">
                 <div className="flex flex-col space-y-5">
                     <div className="w-auto ">
-                        <Card untitled height="[160px]">
+                        <Card untitled height="[155px]">
                             Lorem Ipsum Lorem Ipsum
                         </Card>
                     </div>
                     <div className="w-auto ">
-                        <Card untitled height="[160px]">
+                        <Card untitled height="[155px]">
                         </Card>
                     </div>
                 </div>
                 <div className="flex flex-col space-y-5">
                     <div className="w-auto ">
-                        <Card untitled height="[160px]">
+                        <Card untitled height="[155px]">
                         </Card>
                     </div>
                     <div className="w-auto ">
-                        <Card untitled height="[160px]">
+                        <Card untitled height="[155px]">
                         </Card>
                     </div>
                 </div>
                 <div className="flex flex-col space-y-5">
                     <div className="w-auto ">
-                        <Card untitled height="[160px]">
+                        <Card untitled height="[155px]">
                         </Card>
                     </div>
                     <div className="w-auto ">
-                        <Card untitled height="[160px]">
+                        <Card untitled height="[155px]">
                         </Card>
                     </div>
                 </div>
