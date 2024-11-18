@@ -1,12 +1,12 @@
 /* eslint-disable react/prop-types */
 
 const Card = (props) => {
-    const {untitled, height, children} = props
+    const {untitled, height, children, title} = props
     return(
         <>
             {
                 (!untitled)?
-                <div className="text-lg text-gray-02 mb-2">Title</div>
+                <div className="text-lg text-gray-02 mb-2">{title}</div>
                 :
                 <></>
             }

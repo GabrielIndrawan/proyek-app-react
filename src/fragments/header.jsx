@@ -14,7 +14,7 @@ const Header = () => {
                 <NotificationsIcon className="text-gray-01 scale-110"/>
               </div>
               <div className="ms-10 hidden sm:block">
-                <Input variant="bg-white w-80"/>
+                <Input variant="bg-white w-80" placeholder="Search here"/>
               </div>
             </div>
         </header>
