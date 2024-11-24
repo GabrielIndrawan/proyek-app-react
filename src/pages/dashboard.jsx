@@ -4,8 +4,11 @@ import MainLayout from "../layouts/Mainlayout";
 import bills from "../data/bills";
 import expensesBreakdowns from "../data/expense";
 import transactions from "../data/transactions";
+import { useState } from "react";
 
 const DashboardPage = () => {
+  const tabs = ["All", "Revenue", "Expense"]
+  const [activeTab, setTab] = useState("All")
   const billCard = bills.map((bill) => (
       <div key={bill.id} className="lg:flex justify-between pt-3 pb-3">
         <div className="flex">
@@ -25,7 +28,57 @@ const DashboardPage = () => {
         </div>
       </div>
   ))
-  const transactionCard = transactions.map((transaction) => <div key={transaction.id}>{transaction.transactionName}</div>)
+
+  const transactionCard = (tab) => transactions.map((transaction) => {
+    if(tab!="All"){
+      if(transaction.type===tab){
+        return (<div key={transaction.id} className="flex justify-between my-6">
+          <div className="flex">
+            <div className="bg-special-bg px-3 rounded-lg flex flex-col place-content-center">
+              {transaction.icon}
+            </div>
+            <div className="ms-4">
+              <span className="text-xl font-bold">
+                {transaction.transactionName}
+              </span>
+              <br />
+              <span className="text-gray-02">{transaction.shopName}</span>
+            </div>
+          </div>
+          <div className="text-right">
+            <span className="text-xl font-bold text-gray-02">
+              ${transaction.amount}
+            </span>
+            <br />
+            <span className="text-gray-02">{transaction.date}</span>
+          </div>
+        </div>)
+      }
+    }else{
+      return (<div key={transaction.id} className="flex justify-between my-6">
+        <div className="flex">
+          <div className="bg-special-bg px-3 rounded-lg flex flex-col place-content-center">
+            {transaction.icon}
+          </div>
+          <div className="ms-4">
+            <span className="text-xl font-bold">
+              {transaction.transactionName}
+            </span>
+            <br />
+            <span className="text-gray-02">{transaction.shopName}</span>
+          </div>
+        </div>
+        <div className="text-right">
+          <span className="text-xl font-bold text-gray-02">
+            ${transaction.amount}
+          </span>
+          <br />
+          <span className="text-gray-02">{transaction.date}</span>
+        </div>
+      </div>)
+    }
+  })
+  
   const expensesCard = expensesBreakdowns.map((expense) => (
       <div key={expense.id} className="flex pb-4 justify-between">
         <div className="flex">
@@ -47,7 +100,7 @@ const DashboardPage = () => {
         <div className="flex place-content-center flex-col me-8">
         </div>
       </div>
-  ));
+  ))
 
   return (
     <MainLayout type="dashboard">
@@ -69,7 +122,24 @@ const DashboardPage = () => {
         <div className="sm:flex sm:gap-6">
           <div className="mb-4 sm:w-1/3">
               <Card title="Recent Transaction" variant="md:col-span-1 md:row-span-2">
-                {transactionCard}
+                <div>
+                  <div className="mb-4">
+                    <div className="flex flex-row space-x-3">
+                    {
+                      tabs.map((tab)=>(
+                        <button key={tab} value={tab} className={(activeTab===tab)?
+                        "px-4 font-bold border-b-4 border-primary text-primary":
+                        "px-4 font-bold text-gray-01"}
+                        onClick={()=>{setTab(tab)}}
+                        >
+                          {tab}
+                        </button>
+                      ))
+                    }
+                    </div>
+                  </div>
+                  {transactionCard(activeTab)}
+                </div>
               </Card>
           </div>
           <div className="sm:w-2/3">
