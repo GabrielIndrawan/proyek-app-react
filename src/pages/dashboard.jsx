@@ -1,10 +1,11 @@
-/* eslint-disable react/jsx-key */
+
 import Card from "../components/cards";
 import MainLayout from "../layouts/Mainlayout";
 import bills from "../data/bills";
 import expensesBreakdowns from "../data/expense";
 import transactions from "../data/transactions";
 import { useState } from "react";
+import { BarChart } from "@mui/x-charts";
 
 const DashboardPage = () => {
   const tabs = ["All", "Revenue", "Expense"]
@@ -144,7 +145,18 @@ const DashboardPage = () => {
           </div>
           <div className="sm:w-2/3">
             <div className="mb-4">
-              <Card title="Statistics"/>
+              <Card title="Statistics">
+                <div className="font-bold text-xl">Weekly Comparison</div>
+                <BarChart
+                  xAxis={[{ scaleType: 'band', data: ['17 Sun', '18 Mon', '19 Tue','20 Wed','21 Thu','22 Fri','23 Sat'], categoryGapRatio:0.5,},]}
+                  yAxis={[{ tickInterval: [0, 2000, 10000, 50000, 250000], max:250000, scaleType:"linear"}]}
+                  series={[{ data: [50000, 15000, 50000, 50000, 30000, 6000, 25000], color:"lightgrey"}, { data: [200000, 30000, 8000, 55000, 50000, 200000, 50000], color:"#299D91"}]}
+                  width={710}
+                  height={300}
+                  margin={{left: 60}}
+                  borderRadius={6}
+                />
+              </Card>
             </div>
             <div className="mb-4">
               <Card title="Expenses Breakdown">
