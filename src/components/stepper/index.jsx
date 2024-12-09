@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useState } from 'react';
 import { useTheme } from '@mui/material/styles';
 
@@ -20,15 +21,28 @@ const Stepper = (props) => {
         setActiveStep((prevActiveStep) => prevActiveStep - 1);
     };
 
+    const dataNum = desc.length
+
     return (
+        <>
+        <div>{desc[activeStep]}</div>
         <MobileStepper
             variant="dots"
-            steps={6}
+            steps={dataNum}
             position="static"
             activeStep={activeStep}
-            sx={{ maxWidth: 400, flexGrow: 1 }}
+            sx={{ 
+                    maxWidth: 400, 
+                    flexGrow: 1,
+                    "& .MuiMobileStepper-dot": {
+                        backgroundColor: "darkgray",
+                    },
+                    "& .MuiMobileStepper-dotActive": {
+                        backgroundColor: "#299D91",
+                    }
+                }}
             nextButton={
-                <Button size="small" onClick={handleNext} disabled={activeStep === 5}>
+                <Button size="small" onClick={handleNext} disabled={activeStep === dataNum-1} sx={{color:"black", fontWeight: "bold"}}>
                     Next
                     {theme.direction === 'rtl' ? (
                         <KeyboardArrowLeft />
@@ -38,7 +52,7 @@ const Stepper = (props) => {
                 </Button>
             }
             backButton={
-                <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
+                <Button size="small" onClick={handleBack} disabled={activeStep === 0} sx={{color:"black", fontWeight: "bold"}}>
                     {theme.direction === 'rtl' ? (
                         <KeyboardArrowRight />
                     ) : (
@@ -48,6 +62,7 @@ const Stepper = (props) => {
                 </Button>
             }
         />
+        </>
     );
 }
 

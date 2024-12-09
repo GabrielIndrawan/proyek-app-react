@@ -7,6 +7,7 @@ import transactions from "../data/transactions";
 import { useState } from "react";
 import { BarChart } from "@mui/x-charts";
 import CardBalance from "../fragments/cardBalance";
+import CardGoal from "../fragments/cardGoal";
 
 const DashboardPage = () => {
   const tabs = ["All", "Revenue", "Expense"]
@@ -111,7 +112,7 @@ const DashboardPage = () => {
             <CardBalance/>
           </div>
           <div className="mb-4 sm:w-1/3">
-            <Card title="Goal"/>
+            <CardGoal/>
           </div>
           <div className="mb-4 sm:w-1/3">
             <Card title="Upcoming Bills">

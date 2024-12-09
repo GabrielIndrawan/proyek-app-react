@@ -13,7 +13,7 @@ export const accounts = [
       bankName: "AB Bank Ltd.",
       branchName: "Park Street Branch",
       accountType: "Checking",
-      accountNumber: "693 456 69 90000",
+      accountNumber: "693 456 695 90000",
       balance: 25000,
       logo: "Visacard.png",
     },
