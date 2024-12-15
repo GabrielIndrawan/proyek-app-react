@@ -6,7 +6,7 @@ const CardStatistic = () => {
 
     return (
         <Card variant="md:col-span-2 min-h-max" title="Statistics">
-            <div className="h-72">
+            <div className="h-[300px]">
                 <select className="font-bold text-lg ring-0 focus: outline-none bg-transparent">
                     <option>Weekly Comparison</option>
                 </select>

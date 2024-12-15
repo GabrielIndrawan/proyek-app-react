@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
-
 import { BarChart } from '@mui/x-charts/BarChart';
+import { useContext } from "react";
+import { themeContext } from "../../context/themeContext";
 
 const chartSetting = {
     yAxis: [
@@ -27,6 +28,11 @@ const chartSetting = {
 
 export default function BarsDataset(props) {
     const {desc} = props
+
+    const {theme} = useContext(themeContext)
+
+    desc.series[1].color = theme.color
+
     return (
         <BarChart
             dataset={desc.data}
