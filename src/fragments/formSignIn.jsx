@@ -1,11 +1,20 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "../components/button"
 import Checkbox from "../components/checkbox"
 import LabeledInput from "../components/labeledinput"
 import { useForm } from "react-hook-form";
+import axios from "axios";
+import { useContext, useState } from "react";
+import CustomizedSnackbars from "../components/SnackBar";
+import { jwtDecode } from "jwt-decode";
+import { AuthContext } from "../context/authContext";
+import { NotifContext } from "../context/notifContext";
 
 const FormSignIn = () =>
   {
+    const navigate = useNavigate()
+    const {setMsg, setOpen, setIsLoading} = useContext(NotifContext)
+    const {setIsLoggedIn, setName} = useContext(AuthContext)
 
     const {
       register,
@@ -15,7 +24,34 @@ const FormSignIn = () =>
       mode: "onChange",
     })
 
-    const onFormSubmit = (data) => {console.log(data)}
+    const onFormSubmit = async (data) => {
+      try {
+        setIsLoading(true)
+        const response = await axios.post(
+          "https://jwt-auth-eight-neon.vercel.app/login",
+          {
+            email: data.email,
+            password: data.password,
+          }
+        );
+        
+        const decoded = jwtDecode(response.data.refreshToken);
+        setIsLoggedIn(true)
+        setName(decoded.name)
+        setIsLoading(false)
+        setOpen(true)
+        setMsg({severity: "success", desc: "Login success"})
+        localStorage.setItem("refreshToken", response.data.refreshToken)
+        navigate("/")
+      } catch (error) {
+        setIsLoading(false)
+        if (error.response) {
+          setOpen(true)
+          setMsg(error.response.data.msg)
+        }
+      }
+    };
+
     const onErrors = (errors) => {console.error(errors)}
 
     return (
@@ -59,9 +95,17 @@ const FormSignIn = () =>
               !isValid?
               "bg-gray-05 w-full text-white"
               :
-              "bg-primary w-full text-white"
+              "bg-primary w-full text-white zoom-in"
             }
             disabled={isValid? "disabled" : ""}>Login</Button>
+            {msg && (
+              <CustomizedSnackbars
+                severity={msg.severity}
+                message={msg.desc}
+                open={open}
+                setOpen={setOpen}
+              />
+            )}
           </form>
     </div>
     );

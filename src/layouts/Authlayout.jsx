@@ -2,15 +2,47 @@
 import {Link} from "react-router-dom"
 import Logo from "../components/logo"
 import Title from "../components/title";
+import { useContext } from "react";
+import { NotifContext } from "../context/notifContext";
+import SimpleBackdrop from "../components/Backdrop";
+import CustomizedSnackbars from "../components/SnackBar";
+import * as motion from "motion/react-client";
 
 const Authlayout = (props) => {
     const {children, type} = props;
+
+    const {msg,setMsg,open,setOpen,isLoading,setIsLoading} = useContext(NotifContext)
+
     return (
     <div className="flex justify-center min-h-screen items-center bg-special-mainBg">
       {/* container start */}
-      <div className="w-full max-w-sm">
+      {
+          isLoading && (
+            <SimpleBackdrop isLoading={isLoading} setIsLoading={setIsLoading}/>
+          )
+        }
+        {
+          msg && (
+            <CustomizedSnackbars
+              severity={msg.severity}
+              message={msg.desc}
+              open={open}
+              setOpen={setOpen}
+            />
+          )
+        }
+      <motion.div 
+      initial={{ opacity: 0, scale: 0 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{
+        duration: 0.4,
+        scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+      }}
+      className="w-full max-w-sm">
         {/* logo start */}
-        <Logo/>
+        <div className="mb-8">
+          <Logo/>
+        </div>
         {/* logo end */}
         {
           type==="sign up"?
@@ -119,7 +151,7 @@ const Authlayout = (props) => {
   )}
 </div>
         {/* link end */}
-      </div>
+      </motion.div>
       {/* container end */}
     </div>
   )
