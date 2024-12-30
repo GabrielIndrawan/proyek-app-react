@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 
 import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
 import ForgetPassword from "./pages/forgetPassword";
@@ -12,7 +13,8 @@ import { AuthContext } from "./context/authContext";
 const App = () => {
   const {isLoggedIn} = useContext(AuthContext)
 
-  const requireAuth = ({children}) => {
+  const requireAuth = (props) => {
+    const {children} = props
     return isLoggedIn? children : <Navigate to={"/login"}/>
   }
 

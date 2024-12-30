@@ -1,10 +1,10 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Button from "../components/button"
 import Checkbox from "../components/checkbox"
 import LabeledInput from "../components/labeledinput"
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import { useContext, useState } from "react";
+import { useContext,} from "react";
 import CustomizedSnackbars from "../components/SnackBar";
 import { jwtDecode } from "jwt-decode";
 import { AuthContext } from "../context/authContext";
@@ -13,7 +13,7 @@ import { NotifContext } from "../context/notifContext";
 const FormSignIn = () =>
   {
     const navigate = useNavigate()
-    const {setMsg, setOpen, setIsLoading} = useContext(NotifContext)
+    const {setMsg, msg, setOpen, setIsLoading} = useContext(NotifContext)
     const {setIsLoggedIn, setName} = useContext(AuthContext)
 
     const {

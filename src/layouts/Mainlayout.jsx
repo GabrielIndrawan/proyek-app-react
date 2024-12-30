@@ -3,6 +3,9 @@ import { useContext } from "react";
 import Header from "../fragments/header";
 import NavBar from "../fragments/navBar";
 import { themeContext } from "../context/themeContext";
+import { NotifContext } from "../context/notifContext";
+import SimpleBackdrop from "../components/Backdrop";
+import CustomizedSnackbars from "../components/SnackBar";
 
 const MainLayout = (props) => {
     const {children} = props

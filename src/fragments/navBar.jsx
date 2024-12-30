@@ -5,9 +5,12 @@ import { useContext } from "react";
 import { themeContext } from "../context/themeContext";
 import { AuthContext } from "../context/authContext";
 import { NotifContext } from "../context/notifContext";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const NavBar = () => {
 
+  const navigate = useNavigate()
   const themes = [
     { name: "theme-green", bgcolor: "bg-[#299D91]", color: "#299D91" },
     { name: "theme-blue", bgcolor: "bg-[#1E90FF]", color: "#1E90FF" },

@@ -1,12 +1,18 @@
-import { goals } from "../data/goals";
+
 import Card from "../components/cards";
 import Icons from "../components/icons";
 import CompositionExample from "../components/gaugeChart";
 import axios from "axios";
 import { useEffect } from "react";
+import { useState } from "react";
+import { useContext } from "react";
+import { NotifContext } from "../context/notifContext";
+import { useNavigate } from "react-router-dom";
 
 const CardGoal = () => {
     const [goals, setGoals] = useState({presentAmount: 0, targetAmount: 0})
+    const {setMsg, setOpen, setName, setIsLoggedIn} = useContext(NotifContext)
+    const navigate = useNavigate()
     const chartValue = goals.presentAmount * 100/goals.targetAmount
     const getData = async () => {
       try {
