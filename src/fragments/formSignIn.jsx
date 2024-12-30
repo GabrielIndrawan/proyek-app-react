@@ -74,7 +74,7 @@ const FormSignIn = () =>
               }
             </div>
             <div className="mb-6">
-              <LabeledInput type="password" name="password" label="password" placeholder="hello@example.com"
+              <LabeledInput type="password" name="password" label="password" placeholder="*************"
               register={
                 {
                   ...register("password",{

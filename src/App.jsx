@@ -13,7 +13,7 @@ import { AuthContext } from "./context/authContext";
 const App = () => {
   const {isLoggedIn} = useContext(AuthContext)
 
-  const requireAuth = (props) => {
+  const RequireAuth = (props) => {
     const {children} = props
     return isLoggedIn? children : <Navigate to={"/login"}/>
   }
@@ -21,7 +21,7 @@ const App = () => {
   const routers = createBrowserRouter([
     {
       path:"/",
-      element: <requireAuth><DashboardPage/></requireAuth>,
+      element: <RequireAuth><DashboardPage/></RequireAuth>,
     },
     {
       path:"/login",
@@ -37,11 +37,11 @@ const App = () => {
     },
     {
       path:"/balance",
-      element: <requireAuth><BalancePage/></requireAuth>
+      element: <RequireAuth><BalancePage/></RequireAuth>
     },
     {
       path:"/expenses",
-      element: <requireAuth><ExpensesPage/></requireAuth>
+      element: <RequireAuth><ExpensesPage/></RequireAuth>
     }
   ])
 
