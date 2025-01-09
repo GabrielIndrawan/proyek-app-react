@@ -7,14 +7,16 @@ import { NotifContext } from "../context/notifContext";
 import SimpleBackdrop from "../components/Backdrop";
 import CustomizedSnackbars from "../components/SnackBar";
 import * as motion from "motion/react-client";
+import {DarkModeContext} from "../context/darkmodeContext";
 
 const Authlayout = (props) => {
     const {children, type} = props;
 
     const {msg,setMsg,open,setOpen,isLoading,setIsLoading} = useContext(NotifContext)
+    const {darkMode, setDarkMode} = useContext(DarkModeContext)
 
     return (
-    <div className="flex justify-center min-h-screen items-center bg-special-mainBg">
+    <div className={`flex justify-center min-h-screen items-center ${darkMode.name}`}>
       {/* container start */}
       {
           isLoading && (
@@ -150,7 +152,14 @@ const Authlayout = (props) => {
     </div>
   )}
 </div>
-        {/* link end */}
+          <div className="h-[10px]"/>
+          <div className="justify-self-center">
+            <button className={` ${(darkMode.name==="bg-black")? "bg-white text-black":"bg-black text-white"} py-3 px-5 rounded-lg`}
+            onClick={()=>{(darkMode.name==="bg-black")? setDarkMode({name:"bg-white",color:"#f4f5f7"}):setDarkMode({name:"bg-black",color:"#000000"})}}>
+              Toggle Dark Mode
+            </button>
+          </div>
+      {/* link end */}
       </motion.div>
       {/* container end */}
     </div>

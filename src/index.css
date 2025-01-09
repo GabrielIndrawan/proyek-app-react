@@ -18,6 +18,14 @@ html{
   .theme-blue {
     --color-primary: #1E90FF;
   }
+
+  .background-black {
+    --color-special-mainBg: #000000;
+  }
+
+  .background-white {
+    --color-special-mainBg: #F4F5F7;
+  }
   
   .theme-purple {
     --color-primary: #6A5ACD;

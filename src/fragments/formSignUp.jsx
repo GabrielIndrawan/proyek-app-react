@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import Button from "../components/button";
 import LabeledInput from "../components/labeledinput";
+import { useContext } from "react";
+import { DarkModeContext } from "../context/darkmodeContext";
 
 const FormSignUp = () => {
   return (

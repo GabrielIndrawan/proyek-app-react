@@ -42,6 +42,7 @@ const FormSignIn = () =>
         setOpen(true)
         setMsg({severity: "success", desc: "Login success"})
         localStorage.setItem("refreshToken", response.data.refreshToken)
+        localStorage.setItem("username", decoded.name)
         navigate("/")
       } catch (error) {
         setIsLoading(false)

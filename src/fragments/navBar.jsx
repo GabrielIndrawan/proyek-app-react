@@ -133,7 +133,7 @@ const Logout = async () => {
                  </div>
                  <div className="hidden sm:block">
                   <div className="font-bold text-white">
-                    {name}
+                    {localStorage.getItem("username")}
                   </div>
                   <div className="mb-1"/>
                   <div className="text-sm">
